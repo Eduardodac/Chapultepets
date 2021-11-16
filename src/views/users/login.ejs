@@ -1,0 +1,67 @@
+<%- include("../partials/head") %>
+
+    <head>
+        <title>ChapultePets - Login</title>
+        <script src="/js/loginValidation.js"></script>
+    </head>
+
+    <body class="login">
+        <!-- Codificación de la cabecera -->
+
+        <!-- Configuración del main -->
+        <main class="login">
+            <form id="formulario" class="formulario" method="POST" action="/users/login" enctype="multipart/form-data">
+                <div class="logo-container">
+                    <a href="/">
+                        <img src="/img/logo_mobile.png" alt="" class="main-logo">
+                    </a>
+                </div>
+
+                <p>
+                    <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuario" class="nombre"
+                        style="width: 100%;">
+                    <p class="errorMessage" id="usuarioError">
+                        <% if (locals.errors && errors.nombreUsuario) { %>
+                            <%= errors.nombreUsuario.msg %> 
+                        <% } %>
+                    </p>
+                </p>
+
+                <p>
+                    <input type="password" name="password" id="password" class="contraseña" placeholder="Contraseña"
+                        style="width: 100%;">
+                    <p class="errorMessage" id="passwordError">
+                        <% if (locals.errors && errors.password) { %>
+                            <%= errors.password.msg %> 
+                        <% } %>
+                    </p>
+                </p>
+
+                <p>
+                    <input type="checkbox" name="recordar">
+                    <label for="recordar">Recordar mi usuario</label>
+                </p>
+
+                <p class="contra">
+                    <A href=/#>¿Olvidaste la contraseña?</A>
+                </p>
+
+                <p>
+                    <button type="submit" class="" style="width: 100%;">Iniciar Sesión</button>
+                </p>
+                <p class="errorMessage" id="errorSubmit"></p>
+            </form>
+
+            <div class="reg">
+                <p>¿Eres nuevo?</p>
+                <p><A href=/users/register>Crear nueva cuenta</A></p>
+            </div>
+        </main>
+
+        <!-- Configuración del Pie de página -->
+        <footer class="for">
+            <%- include("../partials/footerFormularioUsuario") %>
+        </footer>
+    </body>
+
+    </html>

@@ -1,0 +1,129 @@
+<%- include("../partials/head") %>
+
+    <head>
+        <title>ChapultePets - Registrar Producto</title>
+        <script src="/js/productValidation.js"></script>
+    </head>
+
+    <body class="crear">
+
+        <!-- Configuración del main -->
+        <main class="crear">
+            <form action="/products/create" method="POST" enctype="multipart/form-data" autocomplete="off">
+                <div class="logo-container">
+                    <a href="/">
+                        <img src="/img/logo_mobile.png" alt="" class="main-logo">
+                    </a>
+                </div>
+                <p class="mensaje">Registro de un nuevo producto</p>
+                <p>
+                    <input 
+                    type="text" 
+                    name="name"
+                    id="name"
+                    placeholder="Nombre del Artículo" 
+                    class="nombreArt <%=(locals.errors && errors.name) ? "caja-error" : "" %>"
+                    style="width: 100%;"
+                    value="<%= locals.old && old.name ? old.name : ""; %>">
+                    
+                    <p id="name" class="errorMessage">
+                        <% if (locals.errors && errors.name) { %>
+                            <%= errors.name.msg %>         
+                        <% } %>
+                    </p>
+                </p>
+                
+                <p>
+                    <input 
+                    type="text" 
+                    name="category" 
+                    id="category"
+                    placeholder="Categorías del artículo. Ej. Alimento, Juguete" 
+                    class="categoriaArt <%=(locals.errors && errors.category) ? "caja-error" : "" %>"
+                    style="width: 100%;"
+                    value="<%= locals.old && old.category ? old.category : ""; %>"
+                    >
+
+                    <p id="category" class="errorMessage">
+                        <% if (locals.errors && errors.category) { %>
+                            <%= errors.category.msg %>         
+                        <% } %>
+                    </p>
+                <p>
+                    <input 
+                    type="text" 
+                    name="brand" 
+                    id="brand"
+                    placeholder="Marca del artículo" 
+                    class="categoriaArt <%=(locals.errors && errors.brand) ? "caja-error" : "" %>"
+                    style="width: 100%;"
+                    value="<%= locals.old && old.brand ? old.brand : ""; %>">
+
+                    <p id="brand" class="errorMessage">
+                        <% if (locals.errors && errors.brand) { %>
+                            <%= errors.brand.msg %>         
+                        <% } %>
+                    </p>
+                </p>
+
+                <p>
+                    <input 
+                    type="number" 
+                    name="price" 
+                    id="price"
+                    step="0.01"
+                    placeholder="Precio en pesos mexicanos"
+                    class="precio <%=(locals.errors && errors.price) ? "caja-error" : "" %>" 
+                    style="width: 100%;"
+                    value="<%= locals.old && old.price ? old.price : ""; %>">
+
+                    <p id="price" class="errorMessage">
+                        <% if (locals.errors && errors.price) { %>
+                            <%= errors.price.msg %>         
+                        <% } %>
+                    </p>
+                </p>
+
+                <p class="foto">
+                    <label>Foto del artículo: </label>
+                    <input 
+                    type="file" 
+                    name="avatar" 
+                    id="avatar"
+                    placeholder="Foto" 
+                    style="width: 100%;"
+                    >
+
+                    <p id="avatar" class="errorMessage">
+                        <% if (locals.errors && errors.avatar) { %>
+                            <%= errors.avatar.msg %>         
+                        <% } %>
+                    </p>
+                </p>
+
+                <p>
+                    <textarea 
+                    name="description" 
+                    id="description"
+                    placeholder="Descripción" 
+                    class="<%=(locals.errors && errors.description) ? "caja-error" : "" %>" 
+                    style="width: 100%;"
+                    ><%= locals.old && old.description ? old.description : ""; %></textarea>
+
+                    <p id="description" class="errorMessage">
+                        <% if (locals.errors && errors.description) { %>
+                            <%= errors.description.msg %>         
+                        <% } %>
+                    </p>
+                </p>
+
+                <p>
+                    <button type="submit" class="" style="width: 100%;">Subir producto</button>
+                </p>
+            </form>
+        </main>
+        <!-- Configuración del Pie de página -->
+        <%- include("../partials/footerFormularioAdmin") %>
+    </body>
+
+    </html>

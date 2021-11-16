@@ -1,0 +1,92 @@
+<%- include("../partials/head") %> 
+<head>
+    <title>ChapultePets - Carrito de Compras</title>
+    <script src="/js/productCart.js"></script>
+</head>
+
+<body class="cart">
+    <!-- Codificación de la cabecera -->
+    <%- include("../partials/header") %>
+
+    <!-- Configuración del main -->
+    <main class="cart" style="position:relative">
+
+        <!-- Div para ocultar el sobrante de la imagen del header -->
+        <div style="position:absolute; width:150vw; left:-15vw; top:-15px; bottom:0px; background-color: var(--fondo-body); z-index: -5;" ></div>
+
+        <h2>Carrito de Compras</h2>
+        <div>
+            <div class="leyenda">
+                <p>_________________________________________</p>
+                <div>
+                    <p>Artículo</p>
+                    <p>Precio</p>
+                    <p>Cantidad</p>
+                    <p>Subtotal</p>
+                </div>
+                <p>_________________________________________</p>
+            </div>
+            <article>
+                <div id="productList">
+                    <!-- Artículo -->
+                    <div class="articulo">
+                        <div class="logo_cart">  
+                            <img src="">
+                        </div>
+                        <div class="info">
+                            <p id="errorMessage" class="errorMessage"></p>
+                            <div class="detalles">
+                                <p id="nombreProducto">NombreProducto</p>
+                                <p class="etiquetaPrecio">$0.00</p>
+                            </div>
+                            <div class="detallesCant">
+                                <form id="form">
+                                    <input type="number" name="cantidadProducto" id="cantidadProducto">
+                                </form>
+                                <p class="etiquetaPrecioTotal">$0.00</p>
+                            </div>
+                            <div class="botonEliminar">
+                                <button type="submit">Eliminar Producto</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Artículo -->
+                </div>
+                <div class="desyres">
+                    <div class="descuenton">
+                        <h2>Aplicar código de descuento</h2>
+                        <div>
+                            <input type="text" name="descuento" placeholder="Introducir código" id="" class=""  style="height: 30px;">
+                            <button type="submit">Aplicar Descuento</button>
+                        </div>
+                    </div>
+
+                    <div class="resumen">
+                        <h2>Resumen</h2>
+
+                        <div class="subtotal">
+                            <p>Subtotal</p>
+                            <p class="valor">$0.00</p>
+                        </div>
+
+                        <div class="impuestos">
+                            <p>Impuestos</p>
+                            <p class="valor">$0.00</p>
+                        </div>
+
+                        <div class="total">
+                            <p>Total</p>
+                            <p class="valor">$0.00</p>
+                        </div>
+
+                        <button type="submit" style="width: 100%;" id="comprar">Comprar Ahora</button>
+                    </div>
+                </div>
+            </article>
+
+    </main>
+    <!-- Configuración del Pie de página -->
+    <%- include("../partials/footer") %> 
+
+</body>
+</html>

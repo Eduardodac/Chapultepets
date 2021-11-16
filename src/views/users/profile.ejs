@@ -1,0 +1,18 @@
+<%- include("../partials/head") %> 
+<head>
+    <title>ChapultePets - Carrito de Compras</title>
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+
+    <main class="profile">
+        <h1>Bienvenido <%= userLogged.nombreUsuario%> </h1>
+        <div class="imagen">
+            <img src="/img/users/<%=userLogged.imagenPerfil%> " alt="Imagen de perfil">
+        </div>
+    </main>
+
+    <%- include("../partials/footer") %>
+</body>
+</html>

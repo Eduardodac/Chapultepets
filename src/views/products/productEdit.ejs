@@ -1,0 +1,146 @@
+<%- include("../partials/head") %>
+
+    <head>
+        <title>ChapultePets - Registrar Producto</title>
+        <script src="/js/productValidation.js"></script>
+    </head>
+
+    <body class="editar">
+
+        <!-- Configuración del main -->
+        <main class="editar">
+            <form action="/products/edit/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data" autocomplete="off">
+                <div class="logo-container">
+                    <a href="/">
+                        <img src="/img/logo_mobile.png" alt="" class="main-logo">
+                    </a>
+                </div>
+                <p class="mensaje">Edición de un producto existente: <%= producto.name %> </p>
+
+                <!-- <p>
+                    <input type="text" name="idArticulo" id="" placeholder="Ingrese ID existente" class="ID"
+                        style="width: 100%;" required>
+                </p> -->
+
+                <p>
+                    <input 
+                    type="text" 
+                    name="name"
+                    id="name"
+                    placeholder="Cambiar nombre" 
+                    class="nombreArt <%=(locals.errors && errors.name) ? "caja-error" : "" %>"
+                    style="width: 100%;"
+                    value="<%= locals.old && old.name ? old.name : producto.name; %>"
+                    >
+                    <p id="name" class="errorMessage">
+                        <% if (locals.errors && errors.name) { %>
+                            <%= errors.name.msg %>         
+                        <% } %>
+                    </p>
+                </p>
+
+                <p>
+                    <label for="category">Categoría: </label>
+                    <input 
+                    type="text" 
+                    name="category"
+                    id="category" 
+                    placeholder=" Cambiar Categoría artículo"
+                    class="categoriaArt <%=(locals.errors && errors.category) ? "caja-error" : "" %>" 
+                    style="width: 100%;"
+                    >
+                    <p id="category" class="errorMessage">
+                        <% if (locals.errors && errors.category) { %>
+                            <%= errors.category.msg %>         
+                        <% } %>
+                    </p>
+                </p>
+
+                <p>
+                    <label for="price">Precio: </label>
+                    <input 
+                    type="number" 
+                    name="price" 
+                    id="price"
+                    step="0.01"
+                    placeholder="Cambiar Precio" 
+                    class="precio <%=(locals.errors && errors.price) ? "caja-error" : "" %>"
+                    style="height: 30px; width: 100%;"
+                    value=<%= locals.old && old.price ? old.price : producto.price; %>
+                    >
+                    <p id="price" class="errorMessage">
+                        <% if (locals.errors && errors.price) { %>
+                            <%= errors.price.msg %>         
+                        <% } %>
+                    </p>
+                </p>
+
+                <p>
+                    <label for="brand">Marca: </label>
+                    <input 
+                    type="text" 
+                    name="brand" 
+                    id="brand"
+                    placeholder=" Cambiar marca del artículo"
+                    class="categoriaArt <%=(locals.errors && errors.brand) ? "caja-error" : "" %>" 
+                    style="width: 100%;"
+                    value="<%= locals.old && old.brand ? old.brand : producto.brand; %>"
+                    >
+                    <p id="brand" class="errorMessage">
+                        <% if (locals.errors && errors.brand) { %>
+                            <%= errors.brand.msg %>         
+                        <% } %>
+                    </p>
+                </p>
+
+                <p>
+                    <label for="description">Descripción del artículo: </label>
+                    <textarea 
+                    name="description" 
+                    id="description"
+                    placeholder="Descripción nueva" 
+                    class="<%=(locals.errors && errors.description) ? "caja-error" : "" %>" 
+                    style="width: 100%;"
+                    ><%= locals.old && old.description ? old.description : producto.description; %></textarea>
+                    <p id="description" class="errorMessage">
+                        <% if (locals.errors && errors.description) { %>
+                            <%= errors.description.msg %>         
+                        <% } %>
+                    </p>
+
+                </p>
+
+                <p>
+                    <label>Imagen de producto actual: </label>
+                    <img
+                    src="/img/products/<%=producto.image%>"
+                    alt="Imagen de producto actual"
+                    style="width: 100%"
+                    >
+                </p>
+
+                <p class="foto">
+                    <label for="avatar">Cambiar Foto del artículo: </label>
+                    <input type="file"
+                    name="avatar"
+                    id="avatar"
+                    placeholder="Foto" 
+                    style="width: 100%;"
+                    >
+                    <p id="avatar" class="errorMessage">
+                        <% if (locals.errors && errors.avatar) { %>
+                            <%= errors.avatar.msg %>         
+                        <% } %>
+                    </p>
+                </p>
+
+                <p>
+                    <button type="submit" class="" style="width: 100%;">Registrar cambio </button>
+                </p>
+            </form>
+        </main>
+        <!-- Configuración del Pie de página -->
+        <%- include("../partials/footerFormularioAdmin") %>
+    </body>
+
+    </html>

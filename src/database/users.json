@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "nombreUsuario": "jarronbonito",
+    "nombrePila": "Benedicto",
+    "apellido": "Sanchez",
+    "email": "benedicto0@test.com",
+    "password": "Contraseña1+",
+    "telefono": "4835448790",
+    "imagenPerfil": "Portrait_Placeholder.png"
+  },
+  {
+    "id": 2,
+    "nombreUsuario": "CabaioPan",
+    "nombrePila": "Caballo",
+    "email": "cabaiopan@mail.com",
+    "password": "Pan123456+",
+    "apellido": "Pan",
+    "telefono": "5555111122",
+    "imagenPerfil": "Portrait_Placeholder.png"
+  },
+  {
+    "id": 3,
+    "nombreUsuario": "SeñordeGafas",
+    "nombrePila": "Luis",
+    "apellido": "Medina",
+    "password": "VoyLicoreria1+",
+    "email": "prueba@mail.com",
+    "telefono": "5554444888",
+    "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 4,
+    "nombreUsuario": "SeñoradeGafas",
+    "nombrePila": "Luisa",
+    "apellido": "Medina",
+    "password": "VoyLicoreria1+",
+    "email": "pasamada@mail.com",
+    "telefono": "5689784512",
+    "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 5,
+    "nombreUsuario": "hijoconsentido",
+    "nombrePila": "tilin",
+    "apellido": "andarroza",
+    "password": "Pasamontañas1+",
+    "email": "pasadas@mail.com",
+    "telefono": "789465130",
+    "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 6,
+    "nombreUsuario": "añañin",
+    "nombrePila": "Aladin",
+    "apellido": "amaraquelinda",
+    "password": "Unafamilia1+",
+    "email": "cringe@mail.com",
+    "telefono": "8978455623",
+    "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 7,
+    "nombreUsuario": "Mamá_Coco",
+    "nombrePila": "Adrés",
+    "apellido": "Manolo",
+    "password": "Canallin1+",
+    "email": "itsmo@mail.com",
+    "telefono": "9999999999",
+    "imagenPerfil": "peeper.jpg"
+  },
+  {
+    "id": 8,
+    "nombreUsuario": "AMML",
+    "nombrePila": "Anton",
+    "apellido": "halarido",
+    "password": "Camara1+",
+    "email": "AMM@mail.com",
+    "telefono": "9999999999",
+    "imagenPerfil": "history.jpg"
+  },
+  {
+    "id": 9,
+    "nombreUsuario": "Garza",
+    "nombrePila": "Graciela",
+    "apellido": "Carcajada",
+    "password": "Canallin1+",
+    "email": "cara@mail.com",
+    "telefono": "9999999999",
+    "imagenPerfil": "garza.jpg"
+  }
+]

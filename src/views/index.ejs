@@ -1,0 +1,149 @@
+<%- include("./partials/head") %>
+
+    <head>
+        <title>ChapultePets - Inicio</title>
+
+        <script language="JavaScript" type="text/javascript" src="/js/jquery-3.6.0.js"></script>
+        <script src="/js/index.js"></script>
+
+
+    </head>
+
+    <body class="index">
+
+
+        <%- include("./partials/header") %>
+
+        <main class="index" style="position:relative">
+
+            <!-- Div para ocultar el sobrante de la imagen del header -->
+            <div style="position:absolute; width:150vw; left:-15vw; top:-15px; bottom:0px; background-color: var(--fondo-body); z-index: -5;" ></div>
+
+            <!-- Carrusel -->
+            <div id="carrousel">
+                <div id="slide1" class="slide">
+                    <div class="visu"><img src="/img/carrousel1.jpg" alt="Slide1"></div>
+                </div>
+                <div id="slide2" class="slide">
+                    <div class="visu"><img src="/img/carrousel2.jpg" alt="Slide2"></div>
+                </div>
+                <div id="slide3" class="slide">
+                    <div class="visu"><img src="/img/carrousel3.jpg" alt="Slide3"></div>
+                </div>
+
+                <div id="carrousel-nav">
+                    <div class="prev">
+                        <button class="carousel-left-button">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                    <div class="next">
+                        <button class="carousel-right-button">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- div para todo lo que va debajo del carrusel :v -->
+            <div class="div-principal">
+                <!-- Div de categorías -->
+                
+                <ul class="home-logo-bar">
+                    <h1>Categorías</h1>
+                    <li>
+                        <a href="/products/categories/2">
+                            <!-- <img src="img/general_placeholder.png" alt=""> -->
+                            <h4><i class="fas fa-dog"></i></h4>
+                            <p>Perro</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/products/categories/1">
+                            <h4><i class="fas fa-cat"></i></h4>
+                            <p>Gato</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/products/categories/6">
+                            <!-- <img src="img/general_placeholder.png" alt=""> -->
+                            <h4><i class="fas fa-fish"></i></h4>
+                            <p>Peces</i></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/products/categories/9">
+                            <!-- <img src="img/general_placeholder.png" alt=""> -->
+                            <h4><i class="fas fa-crow"></i></h4>
+                            <p>Aves</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/products/categories/5">
+                            <!-- <img src="img/general_placeholder.png" alt=""> -->
+                            <h4><i class="fas fa-dragon"></i></h4>
+                            <p>Reptiles</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/products/categories/4">
+                            <!-- <img src="img/general_placeholder.png" alt=""> -->
+                            <h4><i class="fas fa-otter"></i></h4>
+                            <p>Roedores</p>
+                        </a>
+                    </li>
+                </ul>
+
+                
+                <!-- Div de muestra de artículos -->
+                
+                <div class="product-window">
+                    <h1>Todos nuestros productos</h1>
+                    <% for(let i=0;i<products.length;i++){ %>
+                            
+                        <a href="/products/<%= products[i].id %>">
+                            <article>
+                                <img src="/img/products/<%= products[i].image %> " alt="">
+                                <h4>
+                                    <%= products[i].name %>
+                                </h4>
+                                <!-- casillero de estrellas -->
+                                <p class="product-rating-stars">
+                                    <%- include("./partials/rating_stars",{ rating : products[i].rating }) %>
+                                        <%= products[i].rating %>
+                                            (<%= products[i].reviewsAmount %> )
+                                </p>
+                                <p class="product-price">$<%= products[i].price %>
+                                </p>
+                                <p class="product-brand">
+                                    <%= products[i].brand %>
+                                </p>
+                            </article>
+                        </a>
+                        <% } %>
+                </div>
+
+                <!-- div de cambio de página -->
+                <div class="page-changer">                    
+                </div>
+
+                <!-- div de recomendaciones -->
+                <div class="recommendation-bar">
+                    <h1>Nuestras recomendaciones</h1>
+                    <a><img src="/img/products/default.jpg" alt=""></a>
+                    <a><img src="/img/products/default.jpg" alt=""></a>
+                    <a><img src="/img/products/default.jpg" alt=""></a>
+                    <a><img src="/img/products/default.jpg" alt=""></a>
+                    <a><img src="/img/products/default.jpg" alt=""></a>
+                </div>
+
+
+            </div>
+        </main>
+
+        <!-- Configuración del Pie de página -->
+        <%- include("./partials/footer") %>
+
+    </body>
+
+    </html>

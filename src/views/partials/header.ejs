@@ -1,0 +1,96 @@
+<header>
+    <img src="/img//bg3.jpg" alt="fondo header" id="fondo-header">
+    <div class="upper-header-bar">
+        <div class="logo-container">
+            <a href="/">
+                <img alt="Chapultepets" class="main-logo-mobile" src="/img/logo_mobile.png">
+                <img alt="Chapultepets" class="main-logo-desktop" src="/img/logo_desktop.png">
+            </a>
+        </div>
+        <div class="upper-nav-bar-container">
+            <div class="upper-nav-bar">
+
+
+                <!-- ícono de carrito -->
+                <div class="upper-nav-bar-element">
+                    <div>
+                        <a href="/products/cart">
+                            <p><i class="fas fa-shopping-cart" id="fasCart"></i></p>
+                            <h4>Mi carrito</h4>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ícono de registro -->
+                <% if (!locals.isLogged) { %>
+                    <div class="upper-nav-bar-element">
+                        <div>
+                            <a href="/users/register">
+                                <p><i class="fas fa-envelope" id="fasRegister"></i></p>
+                                <h4>Registro</h4>
+                            </a>
+                        </div>
+                    </div>                 
+                <% } %>
+
+                <!-- ícono de perfil -->
+                <% if (locals.isLogged) { %>
+                    <div class="upper-nav-bar-element">
+                        <div>
+                            <a href="<%= locals.isLogged ? "/users/profile" : "/users/login" %>">
+                                <img src="/img/users/<%= locals.isLogged ? userLogged.imagenPerfil : "Portrait_Placeholder.png" %>" alt="">
+                                <h4>Mi perfil</h4>
+                            </a>
+                        </div>
+                    </div>
+                <% } %>
+                
+                
+                <!-- ícono de login -->
+                <% if (!locals.isLogged) { %>
+                    <div class="upper-nav-bar-element">
+                        <div>
+                            <a href="/users/login">
+                                <p><i class="fas fa-sign-in-alt" id="fasCart"></i></p>
+                                <h4>Ingresar</h4>
+                            </a>
+                        </div>
+                    </div>
+                <% } %>
+
+                <!-- ícono de logout -->
+                <% if (locals.isLogged) { %>
+                    <div class="upper-nav-bar-element">
+                        <div>
+                            <a href="/users/logout">
+                                <p><i class="fas fa-sign-out-alt" id="fasCart"></i></p>
+                                <h4>Cerrar sesión</h4>
+                            </a>
+                        </div>
+                    </div>
+                <% } %>
+
+            </div>
+
+            <form action="" class="search-form">
+                <input type="text">
+                <button>
+                    <p>Buscar&nbsp;&nbsp;</p>
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <ul class="lower-bar">
+        <!-- <a href="/products/lists?selector=mascotas">
+            <li>Mascotas</li>
+        </a>
+        <a href="/products/lists?selector=marcas">
+            <li>Marcas</li>
+        </a> -->
+        <a href="/products/lists?selector=categorias">
+            <li>Categorías</li>
+        </a>
+    </ul>
+</header>

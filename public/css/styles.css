@@ -1,0 +1,1930 @@
+:root{
+    /* --Verde: #64e100;
+    --Azul: #0064E1;
+    --Rosa: #e10064; */
+
+    /* --fondo-header: rgba(68, 0, 23, 0.6); */
+    --fondo-header: rgba(209, 155, 38, 0.8);
+    --sombreado-header: #79009194;
+    /* --sombreado-header: #11d10094; */
+    --icono-categoria: rgb(255, 174, 0);
+    --icono-categoria-hover: rgb(82, 0, 114);
+    /* --icono-categoria: rgb(0, 189, 63);
+    --icono-categoria-hover: rgb(0, 117, 39); */
+    --letra-header:black;
+    
+    --Rosa: #e10064;
+    --fondo-main: white;
+    --fondo-body: #f4f4f4;
+    --fondo-botones-carrusel: rgba(255, 255, 255, 0.274);
+    --fondo-descripcion-carrusel: rgba(255, 255, 255, 0.25);
+    --presio: red;
+    --estrellas: orange;
+    --fondoLogin: #ffffff;
+    --contrasteLogin: #f4f4f4;
+    --formularioValido: lightgreen;
+    --formularioNoValido: #ff7f7f;
+    --fondoTransiciones: #0022AA;
+}
+
+/*
+
+    ÍNDICE
+
+    Sin media query (SMQ)
+        Configuraciones generales SMQ
+        vista: /partials/header SMQ 
+        vista: /partials/footer SMQ
+        vista: /index SMQ
+        vista: /products/productDetail SMQ
+        vista: /products/lists SMQ
+        vista: /products/productList SMQ
+        vista: /users/login SMQ
+        vista: /users/register SMQ
+        vista: /products/productCart SMQ
+        vista: /products/productCreate SMQ
+        vista: /products/productEdit SMQ
+        vista: /products/inventory SMQ
+        vista: /products/back SMQ
+        vista: /error404 SMQ
+        vista: /users/profile SMQ
+
+    Media query 400px
+        vista: /partials/header MQ400px
+        vista: /partials/footer MQ400px
+        vista: /index MQ400px
+        vista: /products/productDetail MQ400px
+        vista: /users/login MQ400px
+        vista: /users/register MQ400px
+        vista: /products/productCart MQ400px
+        vista: /products/productCreate MQ400px
+        vista: /products/productEdit MQ400px
+        vista: /products/inventory MQ400px
+        vista: /products/back MQ400px
+        vista: /error404 MQ400px
+        vista: /users/profile MQ400px
+
+    Media query 720px
+        vista: /partials/header MQ720px
+        vista: /partials/footer MQ720px
+        vista: /index MQ720px
+        vista: /products/productDetail MQ720px
+        vista: /users/login MQ720px
+        vista: /users/register MQ720px
+        vista: /products/productCart MQ720px
+        vista: /products/productCreate MQ720px
+        vista: /products/productEdit MQ720px
+        vista: /products/inventory MQ720px
+        vista: /products/back MQ720px
+        vista: /error404 MQ720px
+        vista: /users/profile MQ720px
+
+    Media query 1200px
+        Configuraciones generales MQ1200px
+        vista: /partials/header MQ1200px
+        vista: /partials/footer MQ1200px
+        vista: /index MQ1200px
+        vista: /products/productDetail MQ1200px
+        vista: /users/login MQ1200px
+        vista: /users/register MQ1200px
+        vista: /products/productCart MQ1200px
+        vista: /products/productCreate MQ1200px
+        vista: /products/productEdit MQ1200px
+        vista: /products/inventory MQ1200px
+        vista: /products/back MQ1200px
+        vista: /error404 MQ1200px
+        vista: /users/profile MQ1200px
+*/
+
+/*          Sin media query (SMQ)           */
+
+
+@keyframes breath{
+    0% {transform:scale(1)}
+    100%{transform:scale(1.2);color: var(--icono-categoria-hover);}
+}
+
+
+/*           Configuraciones generales SMQ            */
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--fondo-body);
+    font-family:"Open Sans", sans-serif !important;
+}
+
+main{
+    margin: 15px;
+    background-color: var(--fondo-main);
+    position: relative;
+}
+
+.stars{
+    color: var(--estrellas);
+}
+
+input:focus,
+textarea:focus{
+    outline: rgb(202, 202, 202) solid 2px;
+}
+
+.caja-ok{
+    margin-top: 10px;
+    border: rgb(0, 172, 0) solid 2px;
+    border-radius: 5px;
+}
+
+footer{
+    background-color: var(--fondo-body);
+}
+
+/* vista: /partials/header SMQ */
+header{
+    background-color: var(--fondo-header);
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--letra-header);
+    padding-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+header img#fondo-header{
+    top: 0;
+    width: 200%;
+    z-index: -10;
+    position: absolute;
+}
+
+header A{
+    text-decoration: none;
+    color: #000000;
+}
+.upper-header-bar{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.logo-container{
+    width: 100%;
+    align-self: center;
+}
+
+.logo-container img{
+    object-fit: contain;
+    width: 100%;
+    max-height: 95px;
+}
+
+.main-logo-desktop{
+    display: none;
+}
+
+.upper-nav-bar-container{
+    width: 80%;
+    font-size: 12px;
+    /* background-color: var(--fondo-header); */
+    padding: 17px;
+    margin: 0 auto;
+    align-self: center;
+}
+
+.upper-nav-bar-element{
+    text-align: center;
+    display: flex;
+    align-self: flex-start;
+    margin-bottom: 10px;
+}
+
+.upper-nav-bar-element div{
+    align-self: center;
+}
+
+.upper-nav-bar-element img{
+    margin-top: 10px;
+    width: 40px;
+    border-radius: 50%;
+    padding: 5px 5px 0px 5px;
+}
+
+form.search-form{
+    display: flex;
+    justify-content: center;
+}
+
+.upper-nav-bar{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.search-form input{
+    width: 60%;
+    padding: 3px;
+}
+
+.search-form button{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 30%;
+    max-width: 120px;
+}
+
+.search-form button p{
+    display: none;
+}
+
+.search-form button p,
+.search-form button i{
+    align-self: center;
+}
+
+.lower-bar{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.lower-bar li{
+    padding: 1rem;
+}
+
+.lower-bar li:hover{
+    background-color: var(--sombreado-header);
+}
+
+.upper-nav-bar-element:hover{
+    background-color: var(--sombreado-header);
+}
+
+header #fasCart,
+header #fasRegister,
+header #fasLogin{
+    text-align: center;
+    font-size: 20px;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* vista: /partials/footer SMQ */
+footer {
+    font-size: 14px;;
+    margin: 10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer.margen {
+    padding: 30px;
+    border-top:solid #000000 1px;
+}
+
+footer div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer A{
+    text-decoration: none;
+    color: #000000;
+}
+
+footer h2{
+    margin-bottom: 10px;
+}
+
+footer p{
+    margin-bottom: 5px;
+}
+
+/* vista: /index SMQ */
+
+main.index{
+    background-color: var(--fondo-body);
+}
+
+main.index div{
+    background-color: var(--fondo-body);
+}
+
+body.index h1{
+    margin-left: 2vw;
+}
+
+body.index div.page-changer a{
+    padding: 10px;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-decoration: none;
+    color: gray;
+    margin-top: 20px;
+}
+
+body.index div.page-changer a.accesible{
+    color: blue;
+}
+
+#carrousel {
+	width:100%;
+	height:24.5vw;
+	margin: 0 auto;
+	position:relative;
+	overflow:hidden;	
+    border: 1px, solid, red;
+}
+
+#carrousel img{
+    width: 100%;
+}
+
+.slide {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	/* height:400px; */
+}
+
+.carrousel-picto{
+    background-color: rgba(0, 0, 0, 0.151) !important;
+	position:absolute;
+	left:42%;
+	bottom:8px;
+	padding:0px;
+	margin:0px;
+    height: 18px;
+}
+
+.carrousel-picto li{
+	display:inline-block;
+    background-color: white;
+	border-radius:50%;
+	width:2vw;
+    max-width: 10px;
+	height:2vw;
+    max-height: 10px;
+	margin:6px;
+	cursor:pointer;
+}
+.carrousel-picto span{display: block;color: transparent;}
+.carrousel-picto li:hover, .carrousel-picto li.active{background-color:#2980b9;}
+
+#carrousel-nav .prev,
+#carrousel-nav .next{
+	top:40%;
+    position: absolute;
+	cursor:pointer;
+	opacity:0.5;
+    background-color: var(--fondo-botones-carrusel);
+}
+
+#carrousel-nav .prev{
+	left: 1%;
+
+}
+#carrousel-nav .next{
+	right: 1%;
+}
+
+button.carousel-left-button,
+button.carousel-right-button{
+    font-size: 4vw;
+}
+
+button.carousel-left-button{
+    left: 0;
+}
+
+button.carousel-right-button{
+    right: 0;
+}
+
+button.carousel-left-button,
+button.carousel-right-button{
+    border: none;
+}
+
+#carousel p{
+    position: absolute;
+    z-index: 5;
+    top: 50px;
+    width: 100%;
+    text-align: center;
+    background-color: var(--fondo-descripcion-carrusel);
+}
+
+#carrousel-nav .prev:hover,#carrousel-nav .next:hover {opacity: 1;}
+
+.carousel{
+    position: relative;
+}
+
+.carousel img{
+    width: 100%;
+}
+
+.recommendation-bar h1,
+.home-logo-bar h1,
+.product-window h1{
+    width: 100%;
+}
+
+.home-logo-bar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 15px 0px;
+    background-color: var(--fondo-body);
+    /* background-color: white; */
+    max-height: 100vw;
+}
+
+.home-logo-bar li{
+    width: 15%;
+    text-align: center;
+}
+
+.home-logo-bar a{
+    text-decoration: none;
+    color: black;
+}
+
+.home-logo-bar h4{
+    font-size: 8vw;
+    /* width: 100%; */
+    color: var(--icono-categoria);
+}
+
+.home-logo-bar h4:hover{
+    /* color: var(--icono-categoria-hover); */
+    animation:breath .1s linear both;
+}
+
+.home-logo-bar p{
+    display: none;
+}
+
+.product-window{
+    background-color: var(--fondo-body);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.product-window a{
+    width: 45%;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+
+.product-window article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    padding: 0px 5px 5px 5px;
+}
+
+.product-window article h4,
+.product-window article p.product-rating-stars{
+    width: 90%;
+    text-align: center;
+}
+
+.product-window article p.product-price,
+.product-window article p.product-brand{
+    width: 45%;
+    text-align: center;
+}
+
+.product-window img{
+    width: 100%;
+    height: 45vw;
+    object-fit: contain;
+    padding: 5%;
+}
+
+.recommendation-bar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+.recommendation-bar a{
+    width: 18%;
+    background-color: white;
+}
+.recommendation-bar img{
+    width: 100%;
+    height: 15vw;
+    object-fit: contain;
+}
+
+.page-changer{
+    text-align: center;
+}
+
+body.index article:hover {
+    box-shadow: 0px 0px 15px rgb(100, 100, 100);
+    transition: all 1s;
+}
+
+/* vista: /products/productDetail SMQ  */
+
+select.opinions-star-selector{
+    height: 1.5rem;
+    margin-top: 15px;
+}
+
+h4,h2{
+    margin-top: 15px;
+}
+
+.main-product-detail{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--fondo-body);
+}
+
+.product-presentation-image{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.product-presentation-image img{
+    width: 70%;
+}
+
+.product-presentation{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-presentation-image{
+    width: 100%;
+}
+
+.product-presentation-text{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    align-self: start;
+    /* border: rgb(196, 196, 196) 1px solid; */
+    /* background-color: white; */
+    /* border-radius: 20px; */
+    padding: 15px;
+}
+
+.product-presentation-text h1{
+    text-align: center;
+    width: 100%;
+}
+
+.product-presentation-text p.product-presentation-price,
+.product-presentation-text p.product-rating-stars,
+.product-presentation-text p.product-presentation-brand,
+.product-presentation-text form{
+    text-align: center;
+    width: 48%;
+}
+
+.product-presentation-text p.product-presentation-description{
+    text-align: justify;
+}
+
+.product-presentation-resume{
+    margin-left: 15px;
+    width: 100%;
+}
+
+.product-presentation-text form input{
+    width: 100%;
+}
+
+.product-presentation-text a.linkCategoria{
+    background-color: rgba(9, 255, 0, 0.212);
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border-radius: 2px;
+    margin-top: 15px;
+}
+
+.product-presentation-text p.categories{
+    margin-top: 10px;
+}
+
+.product-presentation-price{
+    color: var(--presio);
+}
+
+.product-presentation,
+.product-detail,
+.opinions-section{
+    margin-bottom: 15px;
+}
+
+div.opinions-section{
+    display: flex;
+    flex-wrap: wrap;
+    /* border: rgb(196, 196, 196) 1px solid; */
+    border-radius: 20px;
+    padding: 15px;
+}
+
+div.opinions-section h2{
+    width: 50%;
+}
+
+.opinions-section-title-bar{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+div.opinions-section img{
+    width: 50px;
+    height: 50px;
+}
+
+div.a-review{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    /* border: rgb(196, 196, 196) 1px solid; */
+    background-color: white;
+    /* border-radius: 20px; */
+    padding: 15px;
+}
+
+div.a-review .the-review{
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+div.a-review .product-rating-stars{
+    width: 100%;
+}
+
+/* vista: /products/list SMQ */
+body.products-list main{
+    background-color: var(--fondo-body);
+}
+
+/* vista: /products/productList SMQ */
+
+main.productList{
+    background-color: var(--fondo-body);
+}
+
+main.productList div{
+    background-color: var(--fondo-body);
+}
+
+body.productList h1{
+    margin-left: 2vw;
+}
+
+main.productList .product-window{
+    background-color: var(--fondo-body);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 80%;
+    margin: auto;
+}
+
+main.productList .product-window article{
+    margin: auto;
+}
+
+main.productList .product-window a{
+    text-decoration: none;
+    padding-left:10px;
+    padding-right:10px;
+    color: black;
+}
+
+main.productList article:hover {
+    box-shadow: 0px 0px 15px rgb(100, 100, 100);
+    transition: all 1s;
+}
+
+/* vista: /users/login SMQ */
+
+body.login{
+    background-color: var(--contrasteLogin);
+}
+main.login{
+    background-color: var(--contrasteLogin);
+}
+
+main.login div.logo-container{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+main.login form.formulario p input{
+    margin-top: 20px;
+    height: 30px;
+}
+
+main.login form.formulario p button{
+    height: 30px;
+}
+
+main.login form.formulario button:hover{
+    transition: all .5s;
+    background-color: #0022AA;
+    border:solid #0022AA 1px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+main.login form p.contra{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+main.login form{
+    font-size: 14px;
+    width: 225px;
+    background-color: var(--fondoLogin);
+    margin: 0 auto;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+}
+
+main.login div.reg{
+    font-size: 14px;
+    width: 225px;
+    background-color: var(--fondoLogin);
+    margin: 0 auto;
+    margin-top:10px;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer.for{
+    font-size: 12px;
+    width: 375x;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer.for div.cabeza{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+footer.for div.cabeza h2{
+    margin-bottom: 10px;
+}
+
+footer.for div div.redes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* vista: /users/register SMQ */
+input.caja-error{
+    margin-top: 10px;
+    border: red solid 2px;
+    border-radius: 5px;
+}
+
+/* .caja-ok{
+    margin-top: 10px;
+    border: rgb(0, 172, 0) solid 2px;
+    border-radius: 5px;
+} */
+
+p.errorMessager{
+    color: red;
+    margin-bottom:5px;
+    font-size: 14px;
+}
+
+input.nombreUsuario,
+input.nombrePila,
+input.apellido,
+input.password,
+input.confirmarContraseña,
+input.correo,
+input.tel,
+p.avatarPicture,
+main.register button{
+    margin-top:15px;
+}
+
+
+body.register{
+    background-color: var(--contrasteLogin);
+}
+main.register{
+    background-color: var(--contrasteLogin);
+}
+
+main.register div.logo-container{
+    width: 100%;
+}
+main.register form p input{
+    height: 30px;
+}
+
+main.register form p button{
+    height: 30px;
+}
+
+main.register form{
+    font-size: 14px;
+    width: 300px;
+    background-color: var(--fondoLogin);
+    margin: 0 auto;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+}
+
+main.register form button:hover{
+    transition: all .5s;
+    background-color: #0022AA;
+    border:solid #0022AA 1px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+/*file Customize*/
+main.register form div.div_file p.texto{
+    position: relative;
+    top:5px;
+    text-align: center;
+}
+
+main.register form div.div_file{
+    margin-top: 25px;
+    width: 100%;
+    height: 30px;
+    background-color: var(--contrasteLogin);
+    border:  solid #E1E1E1 1px; 
+    border-radius:5px;
+}
+
+main.register form div.div_file input#btn_enviar{
+    position: relative;
+    top: -14px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+main.register form div.div_file:hover{
+    transition: all .5s;
+    background-color: #0022AA;
+    border:solid #0022AA 1px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+
+/* main.register form input.contraseña:invalid{
+    transition: initial;
+    background-color: #ff7f7f;
+}  */
+footer.formulario{
+    font-size: 12px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer.formulario div.cabeza{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+footer.formulario div.cabeza h2{
+    margin-bottom: 10px;
+}
+
+footer.formulario div div.redes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+/* vista: /products/productCart SMQ */
+body.cart{
+    background-color: white;
+}
+
+main.cart{
+    font-size: 14px;
+    margin: auto;
+    background-color: var(--fondo-body);
+    padding: 15px;
+}
+main.cart .resumen{
+    font-size: 14px;
+}
+main.cart article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main.cart h2{
+    margin-bottom: 20px;
+}
+
+main.cart div.leyenda{
+    display:none;
+}
+ main.cart .logo_cart{
+    width: 100%;
+    max-width: 325px;
+    min-width: 250px;
+    max-height: 400px;
+}
+
+ main.cart .logo_cart img{
+    max-height: 400px;
+ }
+
+main.cart .detalles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+main.cart div.articulo{
+    background-color: white;
+    padding:15px 15px 15px 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+}
+
+main.cart .detallesCant{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+main.cart .botonEliminar button{
+    height: 30px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+main.cart .descuenton{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+main.cart .resumen{
+    font-size: 14px;
+    width: 100%;
+    max-width: 325px;
+    /* min-width: 250px; */
+    background-color: var(--contrasteLogin);
+    margin: 0 auto;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+}
+
+main.cart .subtotal{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-top: solid #000000 1px;
+}
+
+main.cart .impuestos{
+    justify-content: space-between;
+    display: flex;
+    padding-bottom: 5px;
+    border-bottom: solid #000000 1px;
+}
+
+main.cart .total{
+    padding-top: 10px;
+    justify-content: space-between;
+    display: flex;
+    padding-bottom: 10px;
+    
+}
+footer.cart{
+    margin-top: 50px;
+}
+
+/* vista: /products/productCreate SMQ */
+main.crear form{
+    font-size: 14px;
+    width: 275x;
+    background-color: var(--fondoLogin);
+    margin: 0 auto;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+    margin-top: 50px;
+}
+
+main.crear form button:hover{
+    transition: all .5s;
+    background-color: #0022AA;
+    border:solid #0022AA 1px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+body.crear, main.crear{
+    background-color: var(--contrasteLogin);
+}
+
+main.crear .mensaje{
+    margin: 10px 0px 10px 0px;
+}
+
+main.crear .logo-container{
+    width: 100%;
+    margin-bottom: 20px;
+}
+main.crear input{
+    display: block;
+    height: 25px;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+main.crear select{
+    height: 20px;
+    margin-top: 20px;
+}
+
+main.crear textarea{
+    height: 40px;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+main.crear button{
+    margin-top: 20px;
+}
+
+main.crear p label{
+    display: block;
+    margin-top: 20px;
+}
+
+p.errorMessage{
+    color: red;
+}
+
+input.caja-error,
+textarea.caja-error{
+    border: red solid 2px;
+    border-radius: 5px;
+}
+
+/* {
+    transition: all 1s;
+    border-radius: 5px;
+    border: solid var(--formularioValido) 2px;
+}  */
+
+
+/* main.crear form .nombreArt:valid,
+main.crear form .categoriaArt:valid,
+main.crear form .ID:valid{
+    transition: all 1s;
+    border-radius: 5px;
+    border: solid var(--formularioValido) 2px;
+}  */
+
+
+/* vista: /products/productEdit SMQ */
+main.editar form{
+    font-size: 14px;
+    width: 275px;
+    background-color: var(--fondoLogin);
+    margin: 0 auto;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+    margin-top: 50px;
+}
+
+main.editar form button:hover{
+    transition: all .5s;
+    background-color: var(--fondoTransiciones);
+    border:solid var(--fondoTransiciones) 1px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+body.editar, main.editar{
+    background-color: var(--contrasteLogin);
+}
+
+main.editar .mensaje{
+    margin: 10px 0px 10px 0px;
+}
+
+main.editar .logo-container{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+main.editar input{
+    height: 25px;
+    padding: 5px;
+}
+
+main.editar label{
+    display: block;
+    margin-top: 20px;
+}
+
+main.editar select{
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+main.editar textarea{
+    height: 40px;
+    padding: 5px;
+}
+
+footer.admin{
+    font-size: 12px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+footer.admin div.cabeza{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+/* vista: /products/inventory SMQ */
+
+main.inventory article {
+    font-size: 14px; 
+    width: 250px;
+    background-color: var(--fondoLogin);
+    margin: 0 auto;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+    margin-top: 10px;
+}
+
+main article img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+main article div.image{
+    width: 215px;
+    height: 275px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+main article button{
+    margin-top: 5px;
+    width: 100%;
+}
+
+main.inventory div.encabezado {
+    display:flex;
+}
+
+
+/* vista: /products/back SMQ */
+body.back div.contenedor-logo img{
+    width: 100%;
+}
+body.back form{
+    text-align: center;
+    font-size: 14px;
+    width: 400px;
+    background-color: var(--fondoLogin);
+    margin: 0 auto;
+    border:  solid #E1E1E1 1px;
+    border-radius: 5px;
+    padding: 17px;
+}
+
+body.back form button{
+    font-size: 14px;
+}
+
+/* vista: /error404 SMQ */
+main.error{
+    text-align: center;
+    padding: 5%;
+}
+
+main.error img{
+    padding: 5%;
+    width: 80%;
+}
+
+/*   vista: /users/profile SMQ    */
+main.profile{
+    margin: auto;
+    text-align: center;
+}
+
+main.profile div.imagen{
+    margin: auto;
+    text-align: center;
+    /* border: 2px solid red; */
+    max-width: 300px;
+    width: 80vw;
+    max-height: 300px;
+    height: 80vw;
+}
+
+main.profile img{
+    width: 100%;
+    /* object-fit: fill; */
+    border-radius: 50px;
+}
+
+/*          Media query 400px           */
+@media (min-width: 400px){
+
+    /* vista: /partials/header MQ400px */
+    .upper-nav-bar{
+        width: 80%;
+    }
+    .upper-nav-bar-container{
+        font-size: 14px;
+    }
+    header #fasCart{
+        font-size: 25px;
+    }
+    header #fasRegister{
+        font-size: 25px;
+    }
+    .upper-nav-bar-element img{
+        width: 42px;
+    }
+
+    /* vista: /partials/footer MQ400px */
+    footer {
+        font-size: 14px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    footer div{
+        margin-left: 15px;
+        display: block;
+    }
+
+    footer div h2:hover{
+        transition: all .5s;
+        color: var(--fondoTransiciones);;
+    }
+    footer div A:hover{
+        transition: all .5s;
+        color: var(--fondoTransiciones);;
+    }
+
+    /*      vista: /index MQ400px       */
+    /*      vista: /products/productDetail MQ400px       */
+
+    div.a-review .product-rating-stars{
+        max-width: 50%;
+    }
+    
+    div.a-review h4{
+        max-width: 40%;
+    }
+
+    /* vista: /users/login MQ400px */
+
+    main.login form{
+        width: 275px;
+    }
+    main.login div.reg{
+        width: 275px;
+    }
+
+    footer.for{
+        width: auto;
+    }
+    footer.for div.cabeza{
+        width: 300px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+    
+    footer.for div.cabeza h2{
+        margin-bottom: 0px;
+    }
+
+   
+    /* vista: /users/register MQ400px */
+    main.register form{
+        width: 350px;
+    }
+   
+    footer.formulario{
+        width: auto;
+    }
+    footer.formulario div.cabeza{
+        width: 400px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+    
+    footer.formulario div.cabeza h2{
+        margin-bottom: 0px;
+    }
+    /* vista: /products/productCart MQ400px */
+    main.cart{
+        font-size: 14px;
+    }
+
+    main.cart .resumen{
+        font-size: 14px;
+    }
+
+    main.cart .logo_cart{
+        max-width: 275px;
+        margin: 10px;
+    }
+    main.cart .articulo{
+
+        display:flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    main.cart .info{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    main.cart .etiquetaPrecio{
+        margin-left: 10px;
+    }
+    /* vista: /products/productCreate MQ400px */
+    main.crear form{
+        width: 325px;
+    }
+    main.crear form p input{
+        height: 35px;
+    }
+
+    main.crear form p button{
+        height: 35px;
+    }
+
+    main.crear textarea{
+        height: 50px;
+    }
+
+    main.crear select{
+        height: 35px;
+    }
+
+    /* vista: /products/productEdit MQ400px */
+
+    main.editar form{
+        width: 325px;
+    }
+    main.editar form p input{
+        height: 35px;
+    }
+
+    main.editar form p button{
+        height: 35px;
+    }
+
+    main.editar textarea{
+        height: 50px;
+    }
+
+    main.editar select{
+        height: 35px;
+    }
+
+    footer.admin{
+        display: flex;
+        justify-content: center;
+        width: auto;
+    }
+    footer.admin div.cabeza{
+        width: 400px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 20px;
+    }
+    
+    footer.admin div.cabeza h2{
+        margin-bottom: 0px;
+    }
+
+    /* vista: /products/inventory MQ400px */
+    /* vista: /products/back MQ400px */
+    /* vista: /error404 MQ400px */
+    /* vista: /users/profile MQ400px */
+    
+}
+
+@media (min-width: 720px){
+
+    /* Generales */
+    header img#fondo-header{
+        width: 100%;
+    }
+
+    /* vista: /partials/header MQ720px */
+    .main-logo-desktop{
+        display: block;
+    }
+
+    .main-logo-mobile{
+        display: none;
+    }
+    .upper-header-bar{
+        flex-direction: row;
+    }
+
+    .upper-nav-bar-container{
+        font-size: 14px;
+    }
+    .search-form input{
+        height: 25px;
+    }
+    header .logo-container img{
+        width: 70%;
+    }
+
+    /*          vista: /partials/footer MQ720px         */
+    footer {
+        font-size: 14px;
+    }
+
+    /*          vista: /index MQ720px            */
+
+    .search-form button p{
+        display: block;
+    }
+
+    .home-logo-bar li{
+        width: 12%;
+    }
+
+    .home-logo-bar p{
+        display: block;
+    }
+
+    .product-window{
+        justify-content: flex-start;
+        margin-top: 15px;
+    }
+    
+    .product-window a{
+        width: 25%;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+        align-self: top;
+    }
+
+    .recommendation-bar a{
+        width: 15%;
+    }
+    .recommendation-bar img{
+        width: 100%;
+    }
+
+    .product-window img{
+        max-height: 20vw;
+        object-fit: contain;
+    }
+
+    .carrousel-picto{
+        left:45%;
+        bottom:8px;
+        height: 3vw;
+        max-height: 22px;
+    }
+    
+    .carrousel-picto li{
+        max-width: 10px;
+        height:2vw;
+        max-height: 10px;
+        margin:6px;
+    }
+
+    /*          vista: /products/productDetail MQ720px        */
+    .product-presentation-image{
+        width: 50%;
+    }
+
+    .product-presentation-text{
+        width: 50%;
+    }
+
+    .product-presentation,
+    .product-detail{
+        max-width: 90%;
+    }
+
+    .opinions-section{
+        width: 100%;
+    }
+    
+    /*          vista: /users/login MQ720px         */
+    main.login form p input{
+        height: 40px;
+    }
+
+    main.login form p button{
+        height: 40px;
+    }
+
+    main.login form{
+        width: 300px;
+        font-size: 14px;
+    }
+
+    main.login div.reg{
+        width: 300px;
+        font-size: 14px;
+    }
+
+    footer.for div.cabeza{
+        width: 350px;
+    }
+
+    /*          vista: /users/register MQ720px          */
+    main.register form.formulario p input{
+        height: 40px;
+    }
+
+    main.register form.formulario p button{
+        height: 40px;
+    }
+    main.register form{
+        width: 425px;
+        font-size: 14px;
+    }
+    footer.formulario div.cabeza{
+        width: 450px;
+    }
+
+    /*          vista: /products/productCart MQ720px            */
+    main.cart{
+        font-size: 16px;
+    }
+    main.cart .resumen{
+        font-size: 16px;
+    }
+    main.cart .desyres{
+        align-self: flex-start;
+    }
+    main.cart .logo_cart{
+        max-width: 325px;
+        margin: 10px;
+    }
+    main.cart article{
+        width: 100%;
+        max-width: 1000px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    main.cart .articulo{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        /* max-width: 600px; */
+        /* min-width: 520px; */
+        margin-right: 20px;
+    }
+
+    /*          vista: /products/productCreate MQ720px          */
+    main.crear form p input{
+        height: 40px;
+    }
+
+    main.crear form p button{
+        height: 40px;
+    }
+    main.crear form{
+        width: 425px;
+        font-size: 14px;
+    }
+
+    main.crear textarea{
+        height: 70px;
+    }
+
+    main.crear select{
+        height: 40px;
+    }
+
+    /*          vista: /products/productEdit MQ720px            */
+
+    main.editar form p input{
+        height: 40px;
+    }
+
+    main.editar form p button{
+        height: 40px;
+    }
+    main.editar form{
+        width: 425px;
+        font-size: 14px;
+    }
+
+    main.editar textarea{
+        height: 70px;
+    }
+
+    main.editar select{
+        height: 40px;
+    }
+
+    footer.admin div.cabeza{
+        width: 425px;
+    }
+    
+    /*          vista: /products/inventory MQ720px          */
+    /*          vista: /products/back MQ720px            */
+
+    /*          vista: /error404 MQ720px            */
+    main.error img{
+        width: 60%;
+    }
+
+    /*          vista: /users/profile MQ720px           */
+}
+
+@media (min-width: 1200px){
+
+    /*          Configuraciones generales MQ1200px      */
+
+
+    /*          vista: /partials/header MQ1200px            */
+    .upper-nav-bar-container{
+        font-size: 14px;
+    }
+
+    header #fasCart{
+        font-size: 25px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    header #fasRegister{
+        font-size: 25px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .upper-nav-bar-element img{
+        width: 50px;
+        margin-bottom: 10px;
+    }
+
+    /*          vista: /partials/footer MQ1200px            */
+    footer {
+        font-size: 16px;
+    }
+
+    /*          vista: /index MQ1200px          */
+    main.index{
+        margin: auto;
+        max-width: 75%;
+    }
+
+    #carrousel {
+        width:100%;
+        height:18.5vw;
+    }
+
+    .div-principal{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .home-logo-bar{
+        width: 15%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .home-logo-bar li{
+        width: 100%
+    }
+
+    .product-window{
+        width: 83%;
+    }
+
+    .recommendation-bar,
+    .page-changer{
+        width: 100%;
+    }
+
+    /*          vista: /products/productDetail MQ1200px         */
+    main.main-product-detail{
+        margin: auto;
+        max-width: 75%;
+    }
+
+    div.a-review .product-rating-stars{
+        max-width: 60%;
+        width: fit-content;
+    }
+    
+    div.a-review h4{
+        max-width: 30%;
+    }
+
+
+    /*           vista: /users/login MQ1200px           */
+    main.login form p input{
+        height: 50px;
+    }
+
+    main.login form p button{
+        height: 50px;
+    }
+
+    main.login form{
+        font-size: 16px;
+    }
+
+    main.login div.reg{
+        font-size: 16px;
+    }
+
+    /*          vista: /users/register MQ1200px         */
+    main.register form p input{
+        height: 50px;
+    }
+
+    main.register form p button{
+        height: 50px;
+    }
+
+    main.register form{
+        font-size: 16px;
+    }
+    footer.formulario div.cabeza{
+        width: 450px;
+    }
+
+    /*          vista: /products/productCart MQ1200px           */
+    main.cart{
+        font-size: 20px;
+        max-width: 1200px;
+    }
+    main.cart .resumen{
+        /* min-width: 350px; */
+    }
+    main.cart .botonEliminar button{
+        width: 70%;
+    }
+    main.cart .info{
+        width: 500px;
+    }
+    main.cart .detalles{
+        width: auto;
+        max-width: none;
+        max-width: none;
+    }
+    main.cart .logo_cart{
+        width: 1000px;
+        margin-right: 30px;;
+    }
+
+    main.cart .articulo{
+        justify-content: space-between;
+        width: auto;
+        max-width: none;
+        min-width: none;
+    }
+
+    main.cart article{
+        justify-content: space-between;
+        width: auto;
+        max-width: none;
+        min-width: none;
+    }
+
+    /*          vista: /products/productCreate MQ1200px         */
+
+    main.crear form p input{
+        height: 50px;
+    }
+
+    main.crear form p button{
+        height: 50px;
+    }
+
+    main.crear form{
+        font-size: 16px;
+    }
+    main.crear select{
+        height: 50px;
+    }
+
+    /*          vista: /products/productEdit MQ1200px           */
+
+    main.editar form p input{
+        height: 50px;
+    }
+
+    main.editar form p button{
+        height: 50px;
+    }
+
+    main.editar form{
+        font-size: 16px;
+    }
+    main.editar select{
+        height: 50px;
+    }
+
+    footer.admin div.cabeza{
+        width: 400px;
+    }
+    /*          vista: /products/inventory MQ1200px             */
+    /*          vista: /products/back MQ1200px          */
+    /*          vista: /error404 MQ1200px           */
+    main.error img{
+        width: 50%;
+    }
+
+    /*          vista: /users/profile MQ1200px */
+}
